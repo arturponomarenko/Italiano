@@ -19,8 +19,11 @@ final class RandomPairProvider: ObservableObject {
     }
     
     func random() -> LanguagePair {
-        let fetchDescriptor = FetchDescriptor<LearningTopic>()
-
+        let fetchDescriptor = FetchDescriptor<LearningTopic>(
+            predicate: #Predicate<LearningTopic> { topic in
+                topic.isEnabled == true
+            }
+        )
         do {
             let topics = try context.fetch(fetchDescriptor)
             let learningPairs = topics.flatMap { $0.languagePairs }
