@@ -24,6 +24,7 @@ struct AddTopicView: View {
       List {
         TextField("Enter name", text: $name)
           .focused($isTextFieldFocused)
+          .onSubmit(addItem)
       }
       .toolbar {
         ToolbarItem(placement: .topBarLeading) {
