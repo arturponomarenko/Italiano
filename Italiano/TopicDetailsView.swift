@@ -6,23 +6,44 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct TopicDetailsView: View {
     @Environment(\.dismiss) var dismiss
-    @State var topic: LearningTopic
     
+    @State var topic: LearningTopic
     var body: some View {
         List {
             TextField("Enter name", text: $topic.name)
-            ForEach(topic.languagePairs.map { $0.wrapper }) { pair in
+            ForEach(Array(topic.languagePairs.enumerated()), id: \.offset) { index, pair in
                 VStack(alignment: .leading) {
                     HStack {
                         Text(pair.native.language.flag)
-                        Text(pair.native.text)
+                        TextField(
+                            "Original",
+                            text: .init(
+                                get: {
+                                    pair.native.text
+                                },
+                                set: {
+                                    topic.languagePairs[index].native.text = $0
+                                }
+                            )
+                        )
                     }
                     HStack {
                         Text(pair.learning.language.flag)
-                        Text(pair.learning.text)
+                        TextField(
+                            "Translation",
+                            text: .init(
+                                get: {
+                                    pair.learning.text
+                                },
+                                set: {
+                                    topic.languagePairs[index].learning.text = $0
+                                }
+                            )
+                        )
                     }
                 }
             }
