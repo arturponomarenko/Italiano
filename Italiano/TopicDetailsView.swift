@@ -9,25 +9,24 @@ import SwiftUI
 import SwiftData
 
 struct TopicDetailsView: View {
-  @Environment(\.dismiss) var dismiss
   
+  @Environment(\.dismiss) var dismiss
   @State var topic: LearningTopic
+  @State var isAddLanguagePairPresented: Bool = false
+  
   var body: some View {
     List {
       TextField("Enter name", text: $topic.name)
-      ForEach(Array(topic.languagePairs.enumerated()), id: \.offset) { index, pair in
+      ForEach(Array(topic.languagePairs.enumerated()), id: \.offset) { 
+        index, pair in
         VStack(alignment: .leading) {
           HStack {
             Text(pair.native.language.flag)
             TextField(
               "Original",
               text: .init(
-                get: {
-                  pair.native.text
-                },
-                set: {
-                  topic.languagePairs[index].native.text = $0
-                }
+                get: { pair.native.text },
+                set: { topic.languagePairs[index].native.text = $0 }
               )
             )
           }
@@ -36,12 +35,8 @@ struct TopicDetailsView: View {
             TextField(
               "Translation",
               text: .init(
-                get: {
-                  pair.learning.text
-                },
-                set: {
-                  topic.languagePairs[index].learning.text = $0
-                }
+                get: { pair.learning.text },
+                set: { topic.languagePairs[index].learning.text = $0 }
               )
             )
           }
@@ -50,17 +45,24 @@ struct TopicDetailsView: View {
     }
     .toolbar {
       ToolbarItem(placement: .topBarTrailing) {
-        Button(action: done) {
-          Text("Done")
+        Button(action: addItem) {
+          Label("Add Item", systemImage: "plus")
         }
       }
     }
     .navigationTitle(topic.name)
     .navigationBarTitleDisplayMode(.large)
+    .sheet(isPresented: $isAddLanguagePairPresented) {
+      AddLanguagePairView(
+        topic: topic,
+        originalLanguage: .ukrainian,
+        translationLanguage: .italian
+      )
+    }
   }
   
-  func done() {
-    dismiss()
+  func addItem() {
+    isAddLanguagePairPresented = true
   }
 }
 

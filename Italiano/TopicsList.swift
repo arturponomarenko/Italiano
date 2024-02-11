@@ -26,11 +26,8 @@ struct TopicsList: View {
               HStack {
                 Toggle(
                   isOn: .init(
-                    get: {
-                      topic.isEnabled
-                    }, set: {
-                      topic.isEnabled = $0
-                    }
+                    get: { topic.isEnabled }, 
+                    set: { topic.isEnabled = $0 }
                   ),
                   label: {
                     Text(topic.name)
