@@ -51,7 +51,7 @@ struct AddTopicView: View {
   }
   
   func addItem() {
-    let topic = LearningTopic(name: name)
+    let topic = LearningTopic(name: name.trimmingCharacters(in: .whitespacesAndNewlines))
     context.insert(topic)
     dismiss()
   }

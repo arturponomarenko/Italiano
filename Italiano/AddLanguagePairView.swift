@@ -82,6 +82,8 @@ struct AddLanguagePairView: View {
   }
   
   func addItem() {
+    pair.learning.text = pair.learning.text.trimmingCharacters(in: .whitespacesAndNewlines)
+    pair.native.text = pair.native.text.trimmingCharacters(in: .whitespacesAndNewlines)
     topic.languagePairs.append(pair)
     dismiss()
   }
