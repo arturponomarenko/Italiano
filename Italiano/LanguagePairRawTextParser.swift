@@ -10,11 +10,8 @@ final class LanguagePairRawTextParser {
   func parse(_ text: String) -> [LanguagePair] {
     let rows = text.split(separator: "\n").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
     var pairs: [LanguagePair] = []
-    for i in 0...(rows.count / 2) {
-      guard 
-        rows.count >= i + 1,
-        i.isMultiple(of: 2)
-      else { continue }
+    for i in stride(from: 0, to: rows.count - 1, by: 2) {
+      guard i.isMultiple(of: 2) else { continue }
       pairs.append(
         LanguagePair(
           learning: LanguageItem(language: firstLanguage, text: String(rows[i])),
