@@ -18,20 +18,27 @@ struct TopicsList: View {
         NavigationStack {
             List {
                 ForEach(topics) { topic in
-                    HStack {
-                        Toggle(
-                            isOn: .init(
-                                get: {
-                                    topic.isEnabled
-                                }, set: {
-                                    topic.isEnabled = $0
-                                }
-                            ),
-                            label: {
-                                Text(topic.name)
+                    NavigationLink(
+                        destination: {
+                            TopicDetailsView(topic: topic)
+                        },
+                        label: {
+                            HStack {
+                                Toggle(
+                                    isOn: .init(
+                                        get: {
+                                            topic.isEnabled
+                                        }, set: {
+                                            topic.isEnabled = $0
+                                        }
+                                    ),
+                                    label: {
+                                        Text(topic.name)
+                                    }
+                                )
                             }
-                        )
-                    }
+                        }
+                    )
                 }
                 .onDelete(perform: deleteItems)
             }

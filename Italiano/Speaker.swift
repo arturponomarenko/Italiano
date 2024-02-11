@@ -10,10 +10,13 @@ import AVFoundation
 class Speaker {
     
     var isEnabled = true
-    let speechSynthesizer = AVSpeechSynthesizer()
+    private var speechSynthesizer: AVSpeechSynthesizer!
     
     init() {
+        #if !targetEnvironment(simulator)
+        speechSynthesizer = AVSpeechSynthesizer()
         speechSynthesizer.usesApplicationAudioSession = false
+        #endif
     }
     
     func speech(_ languageItem: LanguageItem) {
@@ -31,6 +34,8 @@ class Speaker {
     }
     
     func stop() {
+        #if !targetEnvironment(simulator)
         speechSynthesizer.stopSpeaking(at: .immediate)
+        #endif
     }
 }
