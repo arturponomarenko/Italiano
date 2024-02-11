@@ -16,11 +16,10 @@ class Speaker {
         speechSynthesizer.usesApplicationAudioSession = false
     }
     
-    func speech(_ text: String, language: Language) {
+    func speech(_ languageItem: LanguageItem) {
         guard isEnabled else { return }
-        let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: text)
-//        speechUtterance.rate = AVSpeechUtteranceMaximumSpeechRate / 1.9
-        switch language {
+        let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: languageItem.text)
+        switch languageItem.language {
         case .italian:
             speechUtterance.voice = AVSpeechSynthesisVoice(language: "it-IT")
         case .ukrainian:
@@ -32,6 +31,4 @@ class Speaker {
     func stop() {
         speechSynthesizer.stopSpeaking(at: .immediate)
     }
-    
-    
 }

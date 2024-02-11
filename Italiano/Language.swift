@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Language {
+enum Language: Codable, Hashable {
     case italian, ukrainian
     
     mutating func toggle() {
@@ -16,6 +16,15 @@ enum Language {
             self = .ukrainian
         case .ukrainian:
             self = .italian
+        }
+    }
+    
+    var flag: String {
+        switch self {
+        case .italian:
+            "🇮🇹"
+        case .ukrainian:
+            "🇺🇦"
         }
     }
 }

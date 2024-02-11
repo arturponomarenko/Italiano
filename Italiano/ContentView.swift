@@ -9,52 +9,64 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let dataBase = DataBase()
     let speaker = Speaker()
     
     @State var isSoundEnabled: Bool
-    @State var pair: DataBase.LangPair
+    @State var pair: LanguagePair
     @State var exposed: Bool = false
     
     var body: some View {
         VStack {
             Spacer()
-            Text("🇺🇦 \(pair.ukrainian)")
+            Text("\(pair.native.language.flag) \(pair.native.text)")
                 .font(.title)
             if exposed {
-                Text("🇮🇹 \(pair.italian)")
+                Text("\(pair.learning.language.flag) \(pair.learning.text)")
                     .font(.title)
             }
             Spacer()
-            Button(action: {
-                speaker.isEnabled = !speaker.isEnabled
-                isSoundEnabled = speaker.isEnabled
-            }, label: {
-                Image(systemName: isSoundEnabled ? "speaker.fill" : "speaker.slash.fill")
-                    .font(.title)
-                    .foregroundColor(Color(.label))
-                    .frame(width: 100, height: 100)
-            })
+            HStack {
+                NavigationLink(
+                    destination: {
+                        TopicsList()
+                    },
+                    label: {
+                        Image(systemName: "gear")
+                            .font(.title)
+                            .foregroundColor(Color(.label))
+                            .frame(width: 100, height: 100)
+                    }
+                )
+                Button(action: {
+                    speaker.isEnabled = !speaker.isEnabled
+                    isSoundEnabled = speaker.isEnabled
+                }, label: {
+                    Image(systemName: isSoundEnabled ? "speaker.fill" : "speaker.slash.fill")
+                        .frame(width: 100, height: 100)
+                })
+            }
+            .font(.title)
+            .foregroundColor(Color(.label))
         }
         .background(
             Color(.systemBackground)
                 .onTapGesture {
                     exposed = !exposed
                     if exposed {
-                        speaker.speech(pair.italian, language: .italian)
+                        speaker.speech(pair.learning)
                     } else {
-                        pair = dataBase.random()
-                        speaker.speech(pair.ukrainian, language: .ukrainian)
+//                        pair = dataBase.random()
+                        speaker.speech(pair.native)
                     }
                 }
         )
         .onAppear {
-            speaker.speech(pair.ukrainian, language: .ukrainian)
+            speaker.speech(pair.native)
         }
     }
     
     init() {
-        pair = dataBase.random()
+        pair = LanguagePair(learning: LanguageItem(language: .italian, text: "io"), native: LanguageItem(language: .ukrainian, text: "я"))
         isSoundEnabled = speaker.isEnabled
     }
 }
