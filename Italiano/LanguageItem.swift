@@ -1,4 +1,4 @@
 struct LanguageItem: Codable, Hashable {
-    let language: Language
-    var text: String
+  let language: Language
+  var text: String
 }

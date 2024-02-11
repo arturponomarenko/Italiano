@@ -9,13 +9,13 @@ import SwiftData
 
 @Model
 class LearningTopic {
-    var name: String
-    var languagePairs: [LanguagePair]
-    var isEnabled: Bool
-    
-    init(name: String, languagePairs: [LanguagePair] = [], isEnabled: Bool = true) {
-        self.name = name
-        self.languagePairs = languagePairs
-        self.isEnabled = isEnabled
-    }
+  var name: String
+  var languagePairs: [LanguagePair]
+  var isEnabled: Bool
+  
+  init(name: String, languagePairs: [LanguagePair] = [], isEnabled: Bool = true) {
+    self.name = name
+    self.languagePairs = languagePairs
+    self.isEnabled = isEnabled
+  }
 }
