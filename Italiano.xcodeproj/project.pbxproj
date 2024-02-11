@@ -73,20 +73,13 @@
 		2F9ED7642B781B9B002BB136 /* Italiano */ = {
 			isa = PBXGroup;
 			children = (
+				2F9ED7AC2B792008002BB136 /* Models */,
+				2F9ED7AB2B791FF9002BB136 /* Views */,
 				2F9ED7652B781B9B002BB136 /* ItalianoApp.swift */,
-				2F9ED7672B781B9B002BB136 /* ContentView.swift */,
-				2F9ED77F2B78F571002BB136 /* TopicsList.swift */,
-				2F9ED7A12B790719002BB136 /* AddTopicView.swift */,
 				2F9ED7792B782436002BB136 /* Speaker.swift */,
-				2F9ED7A52B790F70002BB136 /* TopicDetailsView.swift */,
-				2F9ED7A92B791A89002BB136 /* AddLanguagePairView.swift */,
-				2F9ED7752B782212002BB136 /* Language.swift */,
 				2F9ED7692B781B9D002BB136 /* Assets.xcassets */,
 				2F9ED76B2B781B9D002BB136 /* Preview Content */,
 				2F9ED7732B781C04002BB136 /* DataBase.swift */,
-				2F9ED77D2B78F1CE002BB136 /* LearningTopic.swift */,
-				2F9ED77B2B78F0ED002BB136 /* LanguagePair.swift */,
-				2F9ED7A72B791598002BB136 /* LanguageItem.swift */,
 				2F9ED7A32B790B04002BB136 /* RandomPairProvider.swift */,
 			);
 			path = Italiano;
@@ -98,6 +91,29 @@
 				2F9ED76C2B781B9D002BB136 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2F9ED7AB2B791FF9002BB136 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2F9ED7672B781B9B002BB136 /* ContentView.swift */,
+				2F9ED77F2B78F571002BB136 /* TopicsList.swift */,
+				2F9ED7A12B790719002BB136 /* AddTopicView.swift */,
+				2F9ED7A52B790F70002BB136 /* TopicDetailsView.swift */,
+				2F9ED7A92B791A89002BB136 /* AddLanguagePairView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2F9ED7AC2B792008002BB136 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2F9ED7752B782212002BB136 /* Language.swift */,
+				2F9ED77D2B78F1CE002BB136 /* LearningTopic.swift */,
+				2F9ED77B2B78F0ED002BB136 /* LanguagePair.swift */,
+				2F9ED7A72B791598002BB136 /* LanguageItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
