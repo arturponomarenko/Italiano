@@ -42,6 +42,7 @@ struct TopicDetailsView: View {
           }
         }
       }
+      .onDelete(perform: deleteItems)
     }
     .toolbar {
       ToolbarItem(placement: .topBarTrailing) {
@@ -63,6 +64,14 @@ struct TopicDetailsView: View {
   
   func addItem() {
     isAddLanguagePairPresented = true
+  }
+  
+  private func deleteItems(offsets: IndexSet) {
+    withAnimation {
+      for offset in offsets {
+        topic.languagePairs.remove(at: offset)
+      }
+    }
   }
 }
 
