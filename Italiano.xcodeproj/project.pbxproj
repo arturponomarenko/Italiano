@@ -18,6 +18,7 @@
 		2F9ED77E2B78F1CE002BB136 /* LearningTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9ED77D2B78F1CE002BB136 /* LearningTopic.swift */; };
 		2F9ED7802B78F571002BB136 /* TopicsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9ED77F2B78F571002BB136 /* TopicsList.swift */; };
 		2F9ED7A22B790719002BB136 /* AddTopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9ED7A12B790719002BB136 /* AddTopicView.swift */; };
+		2F9ED7A42B790B04002BB136 /* RandomPairProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9ED7A32B790B04002BB136 /* RandomPairProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		2F9ED77D2B78F1CE002BB136 /* LearningTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningTopic.swift; sourceTree = "<group>"; };
 		2F9ED77F2B78F571002BB136 /* TopicsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsList.swift; sourceTree = "<group>"; };
 		2F9ED7A12B790719002BB136 /* AddTopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTopicView.swift; sourceTree = "<group>"; };
+		2F9ED7A32B790B04002BB136 /* RandomPairProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPairProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				2F9ED7732B781C04002BB136 /* DataBase.swift */,
 				2F9ED77D2B78F1CE002BB136 /* LearningTopic.swift */,
 				2F9ED77B2B78F0ED002BB136 /* LanguagePair.swift */,
+				2F9ED7A32B790B04002BB136 /* RandomPairProvider.swift */,
 			);
 			path = Italiano;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F9ED7682B781B9B002BB136 /* ContentView.swift in Sources */,
+				2F9ED7A42B790B04002BB136 /* RandomPairProvider.swift in Sources */,
 				2F9ED7802B78F571002BB136 /* TopicsList.swift in Sources */,
 				2F9ED77C2B78F0ED002BB136 /* LanguagePair.swift in Sources */,
 				2F9ED7762B782212002BB136 /* Language.swift in Sources */,

@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     let speaker = Speaker()
-    
+    @EnvironmentObject var randomPairProvider: RandomPairProvider
     @State var isSoundEnabled: Bool
     @State var pair: LanguagePair
     @State var exposed: Bool = false
@@ -55,18 +55,19 @@ struct ContentView: View {
                     if exposed {
                         speaker.speech(pair.learning)
                     } else {
-//                        pair = dataBase.random()
+                        pair = randomPairProvider.random()
                         speaker.speech(pair.native)
                     }
                 }
         )
         .onAppear {
             speaker.speech(pair.native)
+            pair = randomPairProvider.random()
         }
     }
     
     init() {
-        pair = LanguagePair(learning: LanguageItem(language: .italian, text: "io"), native: LanguageItem(language: .ukrainian, text: "я"))
+        pair = RandomPairProvider.placeholder
         isSoundEnabled = speaker.isEnabled
     }
 }

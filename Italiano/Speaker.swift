@@ -17,6 +17,7 @@ class Speaker {
     }
     
     func speech(_ languageItem: LanguageItem) {
+        #if !targetEnvironment(simulator)
         guard isEnabled else { return }
         let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: languageItem.text)
         switch languageItem.language {
@@ -26,6 +27,7 @@ class Speaker {
             speechUtterance.voice = AVSpeechSynthesisVoice(language: "uk-UK")
         }
         speechSynthesizer.speak(speechUtterance)
+        #endif
     }
     
     func stop() {
