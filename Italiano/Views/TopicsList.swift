@@ -52,6 +52,21 @@ struct TopicsList: View {
     .sheet(isPresented: $isAddTopicPresented) {
       AddTopicView()
     }
+//    .onAppear {
+//      TopicsContainer.data.forEach { topic in
+//        context.insert(
+//          LearningTopic(
+//            name: topic.topic,
+//            languagePairs: topic.1.map {
+//              LanguagePair(
+//                learning: LanguageItem(language: .italian, text: $0.it),
+//                native: LanguageItem(language: .ukrainian, text: $0.uk)
+//              )
+//            }
+//          )
+//        )
+//      }
+//    }
   }
   
   func addItem() {

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F35B0072B7972EA008A1D21 /* EnterLanguagePairsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F35B0062B7972EA008A1D21 /* EnterLanguagePairsView.swift */; };
+		2F35B0092B79742D008A1D21 /* LanguagePairRawTextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F35B0082B79742D008A1D21 /* LanguagePairRawTextParser.swift */; };
+		2F35B0182B79761A008A1D21 /* TextParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F35B0172B79761A008A1D21 /* TextParserTests.swift */; };
 		2F9ED7662B781B9B002BB136 /* ItalianoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9ED7652B781B9B002BB136 /* ItalianoApp.swift */; };
 		2F9ED7682B781B9B002BB136 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9ED7672B781B9B002BB136 /* ContentView.swift */; };
 		2F9ED76A2B781B9D002BB136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F9ED7692B781B9D002BB136 /* Assets.xcassets */; };
@@ -24,7 +27,21 @@
 		2F9ED7AA2B791A89002BB136 /* AddLanguagePairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9ED7A92B791A89002BB136 /* AddLanguagePairView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2F35B0122B797608008A1D21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F9ED75A2B781B9B002BB136 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F9ED7612B781B9B002BB136;
+			remoteInfo = Italiano;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		2F35B0062B7972EA008A1D21 /* EnterLanguagePairsView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = EnterLanguagePairsView.swift; sourceTree = "<group>"; tabWidth = 2; };
+		2F35B0082B79742D008A1D21 /* LanguagePairRawTextParser.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = LanguagePairRawTextParser.swift; sourceTree = "<group>"; tabWidth = 2; };
+		2F35B00E2B797608008A1D21 /* ItalianoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItalianoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F35B0172B79761A008A1D21 /* TextParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextParserTests.swift; sourceTree = "<group>"; };
 		2F9ED7622B781B9B002BB136 /* Italiano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Italiano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F9ED7652B781B9B002BB136 /* ItalianoApp.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ItalianoApp.swift; sourceTree = "<group>"; tabWidth = 2; };
 		2F9ED7672B781B9B002BB136 /* ContentView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -44,6 +61,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2F35B00B2B797608008A1D21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F9ED75F2B781B9B002BB136 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -54,10 +78,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F35B00F2B797608008A1D21 /* ItalianoTests */ = {
+			isa = PBXGroup;
+			children = (
+				2F35B0172B79761A008A1D21 /* TextParserTests.swift */,
+			);
+			path = ItalianoTests;
+			sourceTree = "<group>";
+		};
 		2F9ED7592B781B9B002BB136 = {
 			isa = PBXGroup;
 			children = (
 				2F9ED7642B781B9B002BB136 /* Italiano */,
+				2F35B00F2B797608008A1D21 /* ItalianoTests */,
 				2F9ED7632B781B9B002BB136 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				2F9ED7622B781B9B002BB136 /* Italiano.app */,
+				2F35B00E2B797608008A1D21 /* ItalianoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +115,7 @@
 				2F9ED76B2B781B9D002BB136 /* Preview Content */,
 				2F9ED7732B781C04002BB136 /* DataBase.swift */,
 				2F9ED7A32B790B04002BB136 /* RandomPairProvider.swift */,
+				2F35B0082B79742D008A1D21 /* LanguagePairRawTextParser.swift */,
 			);
 			path = Italiano;
 			sourceTree = "<group>";
@@ -101,6 +136,7 @@
 				2F9ED7A12B790719002BB136 /* AddTopicView.swift */,
 				2F9ED7A52B790F70002BB136 /* TopicDetailsView.swift */,
 				2F9ED7A92B791A89002BB136 /* AddLanguagePairView.swift */,
+				2F35B0062B7972EA008A1D21 /* EnterLanguagePairsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -119,6 +155,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2F35B00D2B797608008A1D21 /* ItalianoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F35B0142B797608008A1D21 /* Build configuration list for PBXNativeTarget "ItalianoTests" */;
+			buildPhases = (
+				2F35B00A2B797608008A1D21 /* Sources */,
+				2F35B00B2B797608008A1D21 /* Frameworks */,
+				2F35B00C2B797608008A1D21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F35B0132B797608008A1D21 /* PBXTargetDependency */,
+			);
+			name = ItalianoTests;
+			productName = ItalianoTests;
+			productReference = 2F35B00E2B797608008A1D21 /* ItalianoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2F9ED7612B781B9B002BB136 /* Italiano */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F9ED7702B781B9D002BB136 /* Build configuration list for PBXNativeTarget "Italiano" */;
@@ -146,6 +200,10 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					2F35B00D2B797608008A1D21 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 2F9ED7612B781B9B002BB136;
+					};
 					2F9ED7612B781B9B002BB136 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -165,11 +223,19 @@
 			projectRoot = "";
 			targets = (
 				2F9ED7612B781B9B002BB136 /* Italiano */,
+				2F35B00D2B797608008A1D21 /* ItalianoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2F35B00C2B797608008A1D21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F9ED7602B781B9B002BB136 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -182,11 +248,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2F35B00A2B797608008A1D21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F35B0182B79761A008A1D21 /* TextParserTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F9ED75E2B781B9B002BB136 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2F9ED7A82B791598002BB136 /* LanguageItem.swift in Sources */,
+				2F35B0092B79742D008A1D21 /* LanguagePairRawTextParser.swift in Sources */,
+				2F35B0072B7972EA008A1D21 /* EnterLanguagePairsView.swift in Sources */,
 				2F9ED7682B781B9B002BB136 /* ContentView.swift in Sources */,
 				2F9ED7A42B790B04002BB136 /* RandomPairProvider.swift in Sources */,
 				2F9ED7AA2B791A89002BB136 /* AddLanguagePairView.swift in Sources */,
@@ -204,7 +280,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2F35B0132B797608008A1D21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F9ED7612B781B9B002BB136 /* Italiano */;
+			targetProxy = 2F35B0122B797608008A1D21 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		2F35B0152B797608008A1D21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58WU4J9NZ3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = itomychstudio.artur.ponomarenko.ItalianoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Italiano.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Italiano";
+			};
+			name = Debug;
+		};
+		2F35B0162B797608008A1D21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58WU4J9NZ3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = itomychstudio.artur.ponomarenko.ItalianoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Italiano.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Italiano";
+			};
+			name = Release;
+		};
 		2F9ED76E2B781B9D002BB136 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -387,6 +507,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2F35B0142B797608008A1D21 /* Build configuration list for PBXNativeTarget "ItalianoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F35B0152B797608008A1D21 /* Debug */,
+				2F35B0162B797608008A1D21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2F9ED75D2B781B9B002BB136 /* Build configuration list for PBXProject "Italiano" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

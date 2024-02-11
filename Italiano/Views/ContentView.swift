@@ -61,8 +61,8 @@ struct ContentView: View {
         }
     )
     .onAppear {
-      speaker.speech(pair.native)
       pair = randomPairProvider.random()
+      speaker.speech(pair.native)
     }
   }
   

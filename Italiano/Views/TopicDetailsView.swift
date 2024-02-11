@@ -13,6 +13,7 @@ struct TopicDetailsView: View {
   @Environment(\.dismiss) var dismiss
   @State var topic: LearningTopic
   @State var isAddLanguagePairPresented: Bool = false
+  @State var isEnterItemsPresented: Bool = false
   
   var body: some View {
     List {
@@ -46,8 +47,13 @@ struct TopicDetailsView: View {
     }
     .toolbar {
       ToolbarItem(placement: .topBarTrailing) {
-        Button(action: addItem) {
-          Label("Add Item", systemImage: "plus")
+        HStack {
+          Button(action: addItem) {
+            Label("Add Item", systemImage: "plus")
+          }
+          Button(action: enterItems) {
+            Text("Enter")
+          }
         }
       }
     }
@@ -60,10 +66,17 @@ struct TopicDetailsView: View {
         translationLanguage: .italian
       )
     }
+    .sheet(isPresented: $isEnterItemsPresented) {
+      EnterLanguagePairsView(topic: topic)
+    }
   }
   
   func addItem() {
     isAddLanguagePairPresented = true
+  }
+  
+  func enterItems() {
+    isEnterItemsPresented = true
   }
   
   private func deleteItems(offsets: IndexSet) {
